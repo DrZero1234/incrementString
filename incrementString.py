@@ -1,10 +1,14 @@
+#!python3
+# incrementString.py
+
+
 def increment_string(strng):
     # In case of blank string the return Value will be "1"
     if strng == '':
         return '1'
     # Checks the string from the last character to the first and while the character is numeric the character will be added to a variavle
     else:
-        #The last numeric string is stored in numberToIncrement
+        # The last numeric string is stored in numberToIncrement
         numberToIncrement = ''
         indexTracker = -1
         try:
@@ -13,17 +17,17 @@ def increment_string(strng):
                 indexTracker -= 1
         except IndexError:
             pass
-    #Reversing the variable since it stores it from back
+    # Reversing the variable since it stores it from back
     numberToIncrement = numberToIncrement[::-1]
-    #If the last character in the original string is not a number we just add the '1' to the string
+    # If the last character in the original string is not a number we just add the '1' to the string
     if len(numberToIncrement) == 0:
         strng += '1'
         return strng
     else:
-        #Setup varibles for the index and the consecutive '0' counter
+        # Setup varibles for the index and the consecutive '0' counter
         zeroCount = 0
         zeroIndex = 0
-        #We iterate over the number we got from the original string and while the value of the iteration is '0' we add +1 to the '0' counter
+        # We iterate over the number we got from the original string and while the value of the iteration is '0' we add +1 to the '0' counter
         while numberToIncrement[zeroIndex] == '0' and zeroIndex < len(numberToIncrement) - 1:
             zeroCount += 1
             zeroIndex += 1
